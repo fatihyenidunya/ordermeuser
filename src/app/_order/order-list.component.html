@@ -1,0 +1,27 @@
+<h1>
+  Order List
+</h1>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      
+      <th scope="col">customer</th>
+      <th scope="col">product</th>
+      <th scope="col">category</th>
+      <th scope="col">amount</th>
+      <th scope="col">price</th>
+      <th scope="col">orderdate</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let order of orders;">     
+
+      <td>{{ order.customer }}</td>
+      <td>{{ order.product }}</td>
+      <td>{{ order.category }}</td>
+      <td> {{order.amount}}  </td>
+      <td> {{order.price}}  </td>
+      <td> {{order.orderDate | date: 'dd/MM/yyyy' }}  </td>
+    </tr>
+    </tbody>
+  </table>

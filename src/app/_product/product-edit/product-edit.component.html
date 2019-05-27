@@ -1,0 +1,58 @@
+<div class="card">
+  <div class="card-header">
+
+  </div>
+  <div class="card-body">
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-4 col-form-label">Category :</label>
+      <div class="col-sm-8">
+
+        <select class="custom-select" [ngModel]="selectedCategory"
+          (ngModelChange)="selectCategory($event)" [disabled]="disable">
+          <option *ngFor="let category of categories" [value]="category.id">
+            {{category.name}}
+          </option>
+        </select>
+
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-4 col-form-label">Title :</label>
+      <div class="col-sm-8">
+          <input type="text" [(ngModel)]="product.title"
+              [disabled]="disable"
+              class="form-control">
+      </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label">Price :</label>
+    <div class="col-sm-8">
+        <input type="text" [(ngModel)]="product.price"
+            [disabled]="disable"
+            class="form-control">
+    </div>
+</div>
+<div class="form-group row">
+  <label class="col-sm-4 col-form-label">Desc :</label>
+  <div class="col-sm-8">
+      <input type="text" [(ngModel)]="product.description"
+          [disabled]="disable"
+          class="form-control">
+  </div>
+</div>
+
+  </div>
+  <div class="card-footer">
+    <button type="button" class="btn btn-danger" [disabled]="!disable"
+    (click)="delete()">Delete</button>
+
+  
+
+  <button type="button" class="btn btn-success pull-right" (click)="operation()"
+    [disabled]="disable">Save</button>
+  <button type="button" class="btn btn-info pull-right" style="margin-right:5px;"
+    (click)="edit()" [disabled]="!disable">Edit</button>
+  </div>
+</div>

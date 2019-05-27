@@ -1,0 +1,33 @@
+ 
+   <a class="btn btn-dark" [routerLink]="['./',0,'edit']"> New </a>
+       
+
+
+<div style="text-align:center">
+  <h1>
+    Product List
+  </h1>
+ 
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      
+      <th scope="col">Title</th>
+      <th scope="col">Descrption</th>
+      <th scope="col">Price</th>
+      <th scope="col">Detail</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of products;">     
+
+      <td>{{ product.title }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.price }}</td>
+      <td>   <a [routerLink]="['./',product.id ,'edit']"> Detail    </a></td>
+ 
+    </tr>
+    </tbody>
+  </table>
+</div>
+
